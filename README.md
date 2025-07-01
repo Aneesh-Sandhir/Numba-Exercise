@@ -1,0 +1,3 @@
+This repository is follows the tutorial outlined by Jariullah Safi in https://www.youtube.com/watch?v=x58W9A2lnQc.
+
+The objective is to simulate a Spring Mass Damper system with static friction and compare the performance of the simulation using just numpy with optimizations made using numba and just in time compilation. This code differs from the tutorial by organizing it in an object oriented fashion as opposed to the functionl paradigm demonstated in the video. The optimizations enabled by numba only work if the inputs are simple data types as opposed to objects and so the class needed to be written in a way where this was possible using the @staticmethod and @njit decorators.
