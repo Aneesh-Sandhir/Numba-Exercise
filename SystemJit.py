@@ -28,11 +28,10 @@ class SystemJit:
         self.timeVector = np.arange(0, self.simulationLength, self.timeInterval)
         
         #perform simulation
-        timeVector = np.arange(0, simulationLength, timeInterval)
-        self.positionVector = SystemJit.simulate(timeVector, initialPosition, 
-                                            initialVelocity, initialAcceleration, 
-                                            thresholdVelocity, dampingConstant,
-                                            springConstant, timeInterval)
+        self.positionVector = SystemJit.simulate(np.arange(0, simulationLength, timeInterval), 
+                                                 initialPosition, initialVelocity, 
+                                                 initialAcceleration, thresholdVelocity, 
+                                                 dampingConstant, springConstant, timeInterval)
         if scale:
             self.maxDisplacement = np.max(self.positionVector)
             self.positionVector = np.divide(self.positionVector, self.maxDisplacement) 
